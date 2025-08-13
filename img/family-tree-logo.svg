@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120" width="300" height="120">
+  <defs>
+    <linearGradient id="treeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d5016;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4a7c59;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d5016;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a3d0a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Tree trunk -->
+  <rect x="45" y="70" width="12" height="25" fill="url(#treeGradient)" rx="2"/>
+  
+  <!-- Tree branches and leaves -->
+  <circle cx="35" cy="65" r="8" fill="url(#treeGradient)" opacity="0.9"/>
+  <circle cx="51" cy="60" r="10" fill="url(#treeGradient)" opacity="0.9"/>
+  <circle cx="65" cy="65" r="8" fill="url(#treeGradient)" opacity="0.9"/>
+  <circle cx="42" cy="50" r="9" fill="url(#treeGradient)" opacity="0.9"/>
+  <circle cx="58" cy="45" r="11" fill="url(#treeGradient)" opacity="0.9"/>
+  <circle cx="51" cy="35" r="8" fill="url(#treeGradient)" opacity="0.9"/>
+  
+  <!-- Family icons in tree -->
+  <circle cx="42" cy="50" r="3" fill="#fff" opacity="0.8"/>
+  <circle cx="58" cy="45" r="3" fill="#fff" opacity="0.8"/>
+  <circle cx="51" cy="35" r="3" fill="#fff" opacity="0.8"/>
+  
+  <!-- Connecting lines -->
+  <line x1="42" y1="53" x2="51" y2="38" stroke="#fff" stroke-width="1.5" opacity="0.6"/>
+  <line x1="58" y1="48" x2="51" y2="38" stroke="#fff" stroke-width="1.5" opacity="0.6"/>
+  
+  <!-- Text -->
+  <text x="110" y="45" font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" fill="url(#textGradient)">Family Tree</text>
+  <text x="110" y="65" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#0c1752">Connect Your Heritage</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="280" cy="30" r="2" fill="#0c1752" opacity="0.6"/>
+  <circle cx="285" cy="45" r="1.5" fill="#0c1752" opacity="0.4"/>
+  <circle cx="275" cy="55" r="1" fill="#0c1752" opacity="0.3"/>
+</svg>

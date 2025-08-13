@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e9ecef;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="treeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d5016;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4a7c59;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#bgGradient)"/>
+  
+  <!-- Main tree -->
+  <rect x="190" y="200" width="20" height="60" fill="url(#treeGradient)" rx="3"/>
+  
+  <!-- Tree canopy -->
+  <circle cx="150" cy="180" r="25" fill="url(#treeGradient)" opacity="0.9"/>
+  <circle cx="200" cy="160" r="35" fill="url(#treeGradient)" opacity="0.9"/>
+  <circle cx="250" cy="180" r="25" fill="url(#treeGradient)" opacity="0.9"/>
+  <circle cx="175" cy="140" r="20" fill="url(#treeGradient)" opacity="0.9"/>
+  <circle cx="225" cy="140" r="20" fill="url(#treeGradient)" opacity="0.9"/>
+  <circle cx="200" cy="120" r="15" fill="url(#treeGradient)" opacity="0.9"/>
+  
+  <!-- Family members as small figures -->
+  <!-- Grandparents -->
+  <g transform="translate(200,125)">
+    <circle r="4" fill="#fff"/>
+    <rect x="-2" y="2" width="4" height="6" fill="#fff" rx="1"/>
+  </g>
+  
+  <!-- Parents -->
+  <g transform="translate(175,145)">
+    <circle r="3" fill="#fff"/>
+    <rect x="-1.5" y="1.5" width="3" height="5" fill="#fff" rx="0.5"/>
+  </g>
+  <g transform="translate(225,145)">
+    <circle r="3" fill="#fff"/>
+    <rect x="-1.5" y="1.5" width="3" height="5" fill="#fff" rx="0.5"/>
+  </g>
+  
+  <!-- Children -->
+  <g transform="translate(150,185)">
+    <circle r="2.5" fill="#fff"/>
+    <rect x="-1" y="1" width="2" height="4" fill="#fff" rx="0.5"/>
+  </g>
+  <g transform="translate(200,165)">
+    <circle r="2.5" fill="#fff"/>
+    <rect x="-1" y="1" width="2" height="4" fill="#fff" rx="0.5"/>
+  </g>
+  <g transform="translate(250,185)">
+    <circle r="2.5" fill="#fff"/>
+    <rect x="-1" y="1" width="2" height="4" fill="#fff" rx="0.5"/>
+  </g>
+  
+  <!-- Connecting lines -->
+  <line x1="200" y1="129" x2="175" y2="142" stroke="#fff" stroke-width="1" opacity="0.7"/>
+  <line x1="200" y1="129" x2="225" y2="142" stroke="#fff" stroke-width="1" opacity="0.7"/>
+  <line x1="175" y1="150" x2="150" y2="182" stroke="#fff" stroke-width="1" opacity="0.7"/>
+  <line x1="200" y1="150" x2="200" y2="162" stroke="#fff" stroke-width="1" opacity="0.7"/>
+  <line x1="225" y1="150" x2="250" y2="182" stroke="#fff" stroke-width="1" opacity="0.7"/>
+  
+  <!-- Floating elements -->
+  <g opacity="0.6">
+    <circle cx="80" cy="80" r="3" fill="#4a7c59">
+      <animate attributeName="cy" values="80;70;80" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="320" cy="100" r="2" fill="#4a7c59">
+      <animate attributeName="cy" values="100;90;100" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="60" cy="200" r="2.5" fill="#4a7c59">
+      <animate attributeName="cy" values="200;190;200" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Hearts floating -->
+  <g opacity="0.4">
+    <path d="M340,60 C340,55 345,50 350,50 C355,50 360,55 360,60 C360,65 350,75 350,75 C350,75 340,65 340,60 Z" fill="#d63384">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-10; 0,0" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M40,150 C40,147 43,144 46,144 C49,144 52,147 52,150 C52,153 46,160 46,160 C46,160 40,153 40,150 Z" fill="#d63384">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+</svg>

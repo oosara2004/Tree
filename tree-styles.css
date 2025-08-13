@@ -1,0 +1,563 @@
+/* Tree-specific styles */
+.tree-container {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.tree-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.tree-header h1 {
+    font-size: 2.5rem;
+    color: #0c1752;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #0c1752 0%, #59b1e4  100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.tree-header p {
+    font-size: 1.1rem;
+    color: #0c1752;
+    margin-bottom: 2rem;
+}
+
+.tree-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.control-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.control-btn.primary {
+    background: linear-gradient(135deg, #0c1752 0%, #59b1e4 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3);
+}
+
+.control-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(45, 80, 22, 0.4);
+}
+
+.control-btn.secondary {
+    background: #f8f9fa;
+    color: #59b1e4;
+    border: 2px solid #e0e0e0;
+}
+
+.control-btn.secondary:hover {
+    background: #e9ecef;
+    border-color: #59b1e4;
+}
+
+.control-btn:not(.primary):not(.secondary) {
+    background: white;
+    color: #2d5016;
+    border: 2px solid #e0e0e0;
+}
+
+.control-btn:not(.primary):not(.secondary):hover {
+    background: #f8f9fa;
+    border-color: #59b1e4;
+}
+
+/* Tree Visualization */
+.tree-visualization {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    position: relative;
+    min-height: 600px;
+    overflow: hidden;
+}
+
+#tree-svg-container {
+    width: 100%;
+    height: 600px;
+    position: relative;
+}
+
+#family-tree-svg {
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+}
+
+#family-tree-svg:active {
+    cursor: grabbing;
+}
+
+/* Tree Nodes */
+.tree-node {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tree-node:hover .node-circle {
+    stroke-width: 3;
+    filter: drop-shadow(0 4px 8px rgba(45, 80, 22, 0.3));
+}
+
+.node-circle {
+    fill: white;
+    stroke: #0c1752;
+    stroke-width: 2;
+    transition: all 0.3s ease;
+}
+
+.node-circle.root {
+    fill: linear-gradient(135deg, #0c1752 0%, #0c1752 100%);
+    stroke: #0c1752;
+}
+
+.node-text {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    fill: #0c1752;
+    text-anchor: middle;
+    pointer-events: none;
+}
+
+.node-text.root {
+    fill: white;
+}
+
+.node-relationship {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 10px;
+    fill: #0c1752;
+    text-anchor: middle;
+    pointer-events: none;
+}
+
+/* Tree Links */
+.tree-link {
+    fill: none;
+    stroke: #0c1752;
+    stroke-width: 2;
+    stroke-opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.tree-link:hover {
+    stroke-width: 3;
+    stroke-opacity: 1;
+}
+
+/* Empty State */
+.empty-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+    text-align: center;
+}
+
+.empty-state-content {
+    max-width: 400px;
+    padding: 2rem;
+}
+
+.empty-state-content i {
+    font-size: 4rem;
+    color: #4a7c59;
+    margin-bottom: 1rem;
+    opacity: 0.6;
+}
+
+.empty-state-content h3 {
+    color: #59b1e4;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.empty-state-content p {
+    color: #59b1e4;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* Tree Statistics */
+.tree-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #0c1752 0%, #59b1e4 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0c1752;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #59b1e4;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: white;
+    margin: 5% auto;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.modal-header h3 {
+    color: #2d5016;
+    font-size: 1.3rem;
+}
+
+.close {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #0c1752;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #0c1752;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #0c1752;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 2px solid #f0f0f0;
+}
+
+/* Context Menu */
+.context-menu {
+    position: fixed;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    padding: 0.5rem 0;
+    z-index: 1001;
+    display: none;
+    min-width: 150px;
+}
+
+.context-item {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #0c1752;
+    transition: background-color 0.2s ease;
+}
+
+.context-item:hover {
+    background-color: #f8f9fa;
+}
+
+.context-item.danger {
+    color: #dc3545;
+}
+
+.context-item.danger:hover {
+    background-color: #fff5f5;
+}
+
+.context-divider {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 0.5rem 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .tree-container {
+        padding: 1rem;
+    }
+    
+    .tree-header h1 {
+        font-size: 2rem;
+    }
+    
+    .tree-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .control-btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+    
+    #tree-svg-container {
+        height: 400px;
+    }
+    
+    .tree-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+        width: 95%;
+    }
+    
+    .modal-actions {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .tree-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .tree-header p {
+        font-size: 1rem;
+    }
+    
+    #tree-svg-container {
+        height: 350px;
+    }
+    
+    .stat-card {
+        padding: 1rem;
+    }
+    
+    .stat-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(74, 124, 89, 0.3);
+    border-radius: 50%;
+    border-top-color: #0c1752;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Zoom Controls */
+.zoom-controls {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.zoom-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    color: #0c1752;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.zoom-btn:hover {
+    background: #f8f9fa;
+    transform: scale(1.1);
+}
+
+/* Tree Node Animations */
+.tree-node {
+    animation: nodeAppear 0.5s ease-out;
+}
+
+@keyframes nodeAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Success/Error Messages */
+.message {
+    position: fixed;
+    top: 100px;
+    right: 2rem;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    z-index: 1002;
+    animation: messageSlideIn 0.3s ease-out;
+}
+
+.message.success {
+    background: #59b1e4;
+}
+
+.message.error {
+    background: #dc3545;
+}
+
+@keyframes messageSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
